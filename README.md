@@ -1,2 +1,6 @@
-# SumApp
-A simple Liberty app used to test CI/CD to ICP with Jenkins
+# Sum App
+
+This project is a simple Liberty Profile app that adds two integers.  Not much more than that.
+
+So please temper your expectations.
+
