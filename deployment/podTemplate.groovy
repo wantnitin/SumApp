@@ -10,20 +10,22 @@ podTemplate(label: label,
 	
 	node(label) {
 		
-		def props = readProperties  file:'deployment/pipeline.properties'
-		def tag = props['version']
-		def gitSrc = props['gitSrc']
-		def dockerRegistry = props['dockerRegistry']
-		def image = props['image']
-		def deployment = props['deployment']
-		def service = props['service']
-		def selector = props['selector']
-		def namespace = props['namespace']
 	  
 	  stage('Get Source') {
-		git "${gitSrc}"
+		git "https://github.com/IBM-ICP-CoC/SumApp.git"
 	  }
-  
+
+	  def props = readProperties  file:'deployment/pipeline.properties'
+	  def tag = props['version']
+	  def gitSrc = props['gitSrc']
+	  def dockerRegistry = props['dockerRegistry']
+	  def image = props['image']
+	  def deployment = props['deployment']
+	  def service = props['service']
+	  def selector = props['selector']
+	  def namespace = props['namespace']
+
+	    
 	  stage('Build Maven project') {
 		container('maven') {
 			sh "mvn -B clean package"
