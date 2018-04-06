@@ -7,18 +7,18 @@ podTemplate(label: label,
 	],
 	volumes: [hostPathVolume(hostPath: '/var/run/docker.sock', mountPath: '/var/run/docker.sock')]
 	) {
-
-	def props = readProperties  file:'deployment/pipeline.properties'
-	def tag = props['version']
-	def gitSrc = props['gitSrc']
-	def dockerRegistry = props['dockerRegistry']
-	def image = props['image']
-	def deployment = props['deployment']
-	def service = props['service']
-	def selector = props['selector']
-	def namespace = props['namespace']
 	
 	node(label) {
+		
+		def props = readProperties  file:'deployment/pipeline.properties'
+		def tag = props['version']
+		def gitSrc = props['gitSrc']
+		def dockerRegistry = props['dockerRegistry']
+		def image = props['image']
+		def deployment = props['deployment']
+		def service = props['service']
+		def selector = props['selector']
+		def namespace = props['namespace']
 	  
 	  stage('Get Source') {
 		git "${gitSrc}"
