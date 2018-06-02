@@ -14,3 +14,9 @@ spec:
         image: mycluster.icp:8500/demo/sumapp
         ports:
         - containerPort: 9080
+        env:
+        - name: NOTES_SERVICE_URL
+          valueFrom: 
+            configMapKeyRef:
+              name: simple-notes-web-config
+              key: NOTES_SERVICE_URL
