@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: sumapp
-        image: mycluster.icp:8500/demo/sumapp
+        image: coc.icp:8500/demo/sumapp
         ports:
         - containerPort: 9080
         env:
