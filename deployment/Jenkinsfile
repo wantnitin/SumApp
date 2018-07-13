@@ -1,4 +1,4 @@
-def label = "mypod-${UUID.randomUUID().toString()}"
+def label = "sumapp-${UUID.randomUUID().toString()}"
 podTemplate(label: label, 
 	containers: [
 	  containerTemplate(name: 'maven', image: 'maven:3.3.9-jdk-8-alpine', ttyEnabled: true, command: 'cat'),
@@ -12,7 +12,7 @@ podTemplate(label: label,
 		
 	  
 	  stage('Get Source') {
-		git "https://github.com/IBM-ICP-CoC/SumApp.git"
+		git "https://gitlab.com/icp-coc-demo/SumApp.git"
 	  }
 
 	  def props = readProperties  file:'deployment/pipeline.properties'
