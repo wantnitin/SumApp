@@ -33,7 +33,7 @@ podTemplate(label: label,
 	  }
 	  stage('Build Docker image') {
 		container('docker') {
-		  docker.withRegistry("${dockerRegistry}", 'icp-id') {
+		  docker.withRegistry("${dockerRegistry}", 'registry-credentials-id') {
 			sh "docker build -t ${image}:${tag} ."
 			sh "docker push ${image}:${tag}"
 			sh "docker tag ${image}:${tag} ${image}:latest"
