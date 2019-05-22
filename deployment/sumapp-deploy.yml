@@ -20,3 +20,15 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 9080
+kind: Service
+metadata:
+  name: sumapp
+  labels:
+    app: sumapp
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 9080
+  selector:
+app: sumapp
