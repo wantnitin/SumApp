@@ -1,0 +1,19 @@
+apiVersion: v1
+clusters:
+- cluster:
+    insecure-skip-tls-verify: true
+    server: https://9.30.44.17:8001
+  name: mycluster
+contexts:
+- context:
+    cluster: mycluster
+    namespace: default
+    user: admin
+  name: mycluster-context
+current-context: mycluster-context
+kind: Config
+preferences: {}
+users:
+- name: admin
+  user:
+    token: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdF9oYXNoIjoiMmZmNzNlMmMzMjdmNjFiOGZhNGY4NjYzMjViYmNjNmNjZTk3M2VlZSIsInJlYWxtTmFtZSI6ImN1c3RvbVJlYWxtIiwidW5pcXVlU2VjdXJpdHlOYW1lIjoiYWRtaW4iLCJpc3MiOiJodHRwczovL215Y2x1c3Rlci5pY3A6OTQ0My9vaWRjL2VuZHBvaW50L09QIiwiYXVkIjoiMGQ5Y2YyZDEyNTdkMDJhMTA0ZGU0NDkxODE5ZjIzMWMiLCJleHAiOjE1NTg1NTMwODksImlhdCI6MTU1ODUyNDI4OSwic3ViIjoiYWRtaW4iLCJ0ZWFtUm9sZU1hcHBpbmdzIjpbXX0.lLFLcQz9KHrCKip5siGQwTdMHr-lgs6aZ5n4EwfjIa1R9_pztezf9MuxTMW2c9GeCkIMcGHf4W_37LAB2npZvDDQRcpo2xS7i8Z0ZUhRUGF0hXM7vo-EM_BX-UwkfCEAURx1Ao90z7uz_6SfVEy4o3pqBmAFowBzn2wsXLiuEi150o0zSe0iML13oePX0VPwBeh3De3sOBrfwcOkhZQwEk750QVdIO0XcgI_zfKo1gjRqWReSRseEHmgWKfgBLmRulmSP1kazpGF7xQxh_cqphJplc4Pbr4NxuM7HRT2V_rt-xcwX4c9QoTfghzyzbH3Z7lqnYvDJPqGk2JzYMIuEw
