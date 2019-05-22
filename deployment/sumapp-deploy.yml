@@ -1,21 +1,21 @@
 apiVersion: extensions/v1beta1 
 kind: Deployment
 metadata:
-  name: sumapp
+  name: $APPNAME
   labels:
-    app: sumapp
+    app: $APPNAME
 spec:
   selector:
     matchLabels:
-      app: sumapp
+      app: $APPNAME
   replicas: 1
   template:
     metadata:
       labels:
-        app: sumapp
+        app: $APPNAME
     spec:
       containers:
-      - name: sumapp
+      - name: $APPNAME
         image: mycluster.icp:8500/default/$APPNAME
         imagePullPolicy: Always
         ports:
@@ -23,13 +23,13 @@ spec:
 apiVersion: v1        
 kind: Service
 metadata:
-  name: sumapp
+  name: $APPNAME
   labels:
-    app: sumapp
+    app: $APPNAME
 spec:
   type: NodePort
   ports:
     - port: 80
       targetPort: 9080
   selector:
-   app: sumapp
+   app: $APPNAME
