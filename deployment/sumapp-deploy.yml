@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: $APPNAME
-        image: mycluster.icp:8500/default/$APPNAME
+        image: $TARGETREPO/$APPNAME
         imagePullPolicy: Always
         ports:
         - containerPort: 9080
