@@ -56,7 +56,6 @@ public class SumServlet extends HttpServlet {
 		} else {
 			int sum = op1 + op2 ;
 			String res = param_op1 + " + " + param_op2 + " = " + sum;
-			res="kuch to sum hoga??";
 			System.out.println( "Summing: " + res );
 			response.setStatus(200);
 	        response.setContentType("text/plain");
